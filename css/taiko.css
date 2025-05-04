@@ -1,43 +1,55 @@
-body{
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* 确保 html 和 body 元素占满整个视口高度 */
+    width: 100%; /* 确保 html 和 body 元素占满整个视口宽度 */
+    overflow: hidden; /* 禁止滚动 */
+}
+
+body {
     background-image: url(../img/bodybg.png);
     background-position: 100px 50px;
     font-family: theTaiko;
-    margin: 0; /* 去除 body 的外边距 */
 }
-/*开始界面*/
-#startBox{
+
+/* 开始界面 */
+#startBox {
     width: 100%;
-    height: 100vh; /* 使用视口高度 */
+    height: 100vh;
     position: absolute;
     border: 20px solid darkgrey;
-    display:block;
+    display: block;
     background-image: url(../img/startbg.jpg);
     background-size: cover;
     background-position: 0px -50px;
-    margin: 0; /* 去除外边距 */
+    box-sizing: border-box; /* 确保边框包含在元素的宽度和高度内 */
 }
-#startBox img{
+
+#startBox img {
     width: 600px;
     position: absolute;
     left: 140px;
     top: -70px;
 }
-#startBox>div{
+
+#startBox>div {
     width: 600px;
     height: 250px;
-    background-color: rgba(50,50,50,.6);
+    background-color: rgba(50, 50, 50, .6);
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%); /* 水平和垂直居中 */
+    transform: translate(-50%, -50%);
 }
-#startBox h4{
+
+#startBox h4 {
     position: absolute;
     left: 100px;
     top: 100px;
     color: white;
 }
-#username{
+
+#username {
     width: 400px;
     height: 50px;
     font-size: 30px;
@@ -48,7 +60,8 @@ body{
     left: 100px;
     top: 60px;
 }
-#startBox>div>div{
+
+#startBox>div>div {
     width: 200px;
     height: 70px;
     font-size: 35px;
@@ -62,73 +75,83 @@ body{
     left: 200px;
     top: 150px;
 }
-#startBox>div>div:hover{
+
+#startBox>div>div:hover {
     background-color: #f64826;
     color: white;
     cursor: pointer;
 }
-/*规则框*/
-#ruleBox{
+
+/* 规则框 */
+#ruleBox {
     width: 100%;
-    height: 100vh; /* 使用视口高度 */
+    height: 100vh;
     position: absolute;
     border: 20px solid darkgrey;
-    display:none;
-    margin: 0; /* 去除外边距 */
+    display: none;
+    box-sizing: border-box; /* 确保边框包含在元素的宽度和高度内 */
 }
-#ruleBox img{
+
+#ruleBox img {
     width: 700px;
-    margin: 20px auto; /* 水平居中 */
+    margin: 20px auto;
     display: block;
 }
-#ruleBox>button{
+
+#ruleBox>button {
     width: 200px;
     height: 70px;
     font-size: 35px;
     line-height: 70px;
     text-align: center;
     font-weight: 900;
-    background-color:#f64826;
+    background-color: #f64826;
     color: white;
     border-radius: 10px;
     position: absolute;
     left: 50%;
     top: 370px;
-    transform: translateX(-50%); /* 水平居中 */
+    transform: translateX(-50%);
 }
-#ruleBox>button:hover{
+
+#ruleBox>button:hover {
     cursor: pointer;
     background-color: grey;
 }
-/*游戏框*/
-#taikoBox{
+
+/* 游戏框 */
+#taikoBox {
     width: 100%;
-    height: 100vh; /* 使用视口高度 */
+    height: 100vh;
     position: absolute;
     border: 20px solid darkgrey;
-    display:none;
-    margin: 0; /* 去除外边距 */
+    display: none;
+    box-sizing: border-box; /* 确保边框包含在元素的宽度和高度内 */
 }
-/*头部*/
-#head{
+
+/* 头部 */
+#head {
     height: 120px;
     background-image: url(../img/headbg1.png);
 }
-/*中部*/
-#middle{
+
+/* 中部 */
+#middle {
     height: 120px;
     position: relative;
-    border-top:5px solid black;
-    border-bottom:5px solid black;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
 }
-#theIcon{
-    width:250px;
+
+#theIcon {
+    width: 250px;
     height: 120px;
-    border-right:5px solid black;
+    border-right: 5px solid black;
     background-color: orangered;
     float: left;
 }
-#scoreBoard{
+
+#scoreBoard {
     width: 110px;
     height: 30px;
     line-height: 30px;
@@ -141,19 +164,22 @@ body{
     color: white;
     text-align: right;
 }
-#hardIcon{
+
+#hardIcon {
     width: 200px;
     position: absolute;
     top: 30px;
     left: 20px;
 }
-#taikoIcon{
+
+#taikoIcon {
     width: 130px;
     top: -15px;
     left: 120px;
     position: absolute;
 }
-.taikoRed{
+
+.taikoRed {
     position: absolute;
     width: 135px;
     height: 152px;
@@ -161,52 +187,60 @@ body{
     top: -33px;
     display: none;
 }
-.taikoBlue{
+
+.taikoBlue {
     position: absolute;
     width: 142px;
     height: 158px;
     left: 115px;
     top: -37px;
     display: none;
-
 }
-#judgementCtx{
+
+#judgementCtx {
     position: absolute;
     left: 0px;
     top: -120px;
     left: 250px;
 }
-#theRoad{
-    width: calc(100% - 255px); /* 调整宽度以适应剩余空间 */
+
+#theRoad {
+    width: calc(100% - 255px);
     height: 85px;
     border-bottom: 5px solid black;
     background-color: #3b3b3b;
     float: left;
 }
-#theRoad img{
+
+#theRoad img {
     width: 95px;
     top: -4px;
     position: absolute;
 }
-#taikoSmile{
+
+#taikoSmile {
     display: none;
 }
-#roadCtx{
+
+#roadCtx {
     position: absolute;
     left: 255px;
 }
-/*底部*/
-#foot{
-    height: calc(100vh - 245px); /* 调整高度以适应剩余空间 */
+
+/* 底部 */
+#foot {
+    height: calc(100vh - 245px);
     background-image: url(../img/footbg.jpg);
     background-size: cover;
-    background-position:0px 420px;
+    background-position: 0px 420px;
 }
-#dancerCtx{
+
+#dancerCtx {
     position: absolute;
 }
-/*暂停*/
-#pausebutton{
+
+/* 暂停 */
+#pausebutton {
     position: absolute;
     width: 80px;
     height: 40px;
@@ -221,19 +255,22 @@ body{
     border-radius: 5px;
     z-index: 12;
 }
-#pauseChoice{
+
+#pauseChoice {
     width: 700px;
     height: 310px;
     padding: 100px;
-    background-color: rgba(50,50,50,.7);
+    background-color: rgba(50, 50, 50, .7);
     position: absolute;
     z-index: 20;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* 水平和垂直居中 */
+    transform: translate(-50%, -50%);
     display: none;
 }
-#restartButton,#continueButton{
+
+#restartButton,
+#continueButton {
     margin-top: 50px;
     width: 300px;
     height: 50px;
@@ -242,64 +279,71 @@ body{
     text-align: center;
     position: relative;
     left: 50%;
-    transform: translateX(-50%); /* 水平居中 */
+    transform: translateX(-50%);
     background-color: white;
     border-radius: 10px;
     outline: none;
 }
-#restartButton:hover{
+
+#restartButton:hover {
     cursor: pointer;
     background-color: darkgrey;
 }
-#continueButton:hover{
+
+#continueButton:hover {
     cursor: pointer;
     background-color: darkgrey;
 }
-/*游戏结束界面*/
-#endBox{
+
+/* 游戏结束界面 */
+#endBox {
     width: 100%;
-    height: 100vh; /* 使用视口高度 */
+    height: 100vh;
     padding: 100px 0;
     position: absolute;
     border: 20px solid darkgrey;
-    display:none;
+    display: none;
     background-image: url(../img/endbg.png);
     text-align: center;
-    margin: 0; /* 去除外边距 */
+    box-sizing: border-box; /* 确保边框包含在元素的宽度和高度内 */
 }
-#firstIcon{
+
+#firstIcon {
     width: 30px;
     height: 22px;
     background-image: url(../img/clearmark.png);
     background-position: -107px;
     display: inline-block;
 }
-#secondIcon{
+
+#secondIcon {
     width: 28px;
     height: 22px;
     background-image: url(../img/clearmark.png);
     background-position: -80px;
     display: inline-block;
-
 }
-#thirdIcon{
+
+#thirdIcon {
     width: 30px;
     height: 22px;
     background-image: url(../img/clearmark.png);
     background-position: -51px;
     display: inline-block;
+}
 
-}
-#endBox table{
+#endBox table {
     font-size: 20px;
-    margin: 0 auto; /* 水平居中 */
+    margin: 0 auto;
 }
-#endBox td{
+
+#endBox td {
     width: 120px;
     height: 30px;
     margin: 5px;
 }
-#endBox>div{
+
+#endBox>div {
     width: 200px;
     height: 50px;
     font-size: 30px;
@@ -312,14 +356,16 @@ body{
     position: absolute;
     left: 50%;
     top: 350px;
-    transform: translateX(-50%); /* 水平居中 */
+    transform: translateX(-50%);
     z-index: 20;
 }
-#endBox>div:hover{
+
+#endBox>div:hover {
     cursor: pointer;
     background-color: #f64826;
 }
-/*图片资源*/
-#theSource img{
+
+/* 图片资源 */
+#theSource img {
     display: none;
 }
